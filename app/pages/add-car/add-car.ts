@@ -35,7 +35,11 @@ export class AddCarPage {
     // console.log(this.newCarForm.value);
     this.navCtrl.push(CarLocatePage, {
       car: {
-        name:form.name
+        name: form.name,
+        lat: parseFloat(form.lat),
+        long: parseFloat(form.long),
+        model:   "",
+        power_level_percent:  parseInt("100")
       }
     });
   }
