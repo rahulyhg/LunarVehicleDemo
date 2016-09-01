@@ -94,7 +94,7 @@ export class CarLocatePage {
     };
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: carLatLong,
-      zoom: 10,
+      zoom: 5,
       streetViewControl: false,
       mapTypeControlOptions: {
         mapTypeIds: ['moon']

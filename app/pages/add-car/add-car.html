@@ -2,13 +2,17 @@
 <ion-content class="add-car">
   <h5>Add New Vehicle</h5>
   <form >
-    <ion-item [class.error]="!username.valid && username.touched">
-        <ion-label floating>Username</ion-label>
+    <ion-item>
+        <ion-label floating>Name</ion-label>
         <ion-input type="text" value="" ></ion-input>
     </ion-item>
-    <ion-item [class.error]="!password.valid && password.touched">
-        <ion-label floating>Password</ion-label>
-        <ion-input type="text" value=""  ></ion-input>
+    <ion-item>
+        <ion-label floating>Latitude</ion-label>
+        <ion-input type="number" value=""  ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Longitude</ion-label>
+        <ion-input type="number" value=""  ></ion-input>
     </ion-item>
     <br/><br/>
     <button type="submit" class="custom-button" block>Submit</button>

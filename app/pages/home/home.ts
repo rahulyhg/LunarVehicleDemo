@@ -48,10 +48,6 @@ export class HomePage {
   };
 
   private presentPopover = function(myEvent) {
-    var event2 = _.cloneDeep(myEvent);
-    // event2.clientX = 100;
-    // event2.x = 100;
-
     let popover = this.popoverCtrl.create(AddCarPage);
     popover.present({
       ev: myEvent
