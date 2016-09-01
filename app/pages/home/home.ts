@@ -2,23 +2,23 @@ import {
   Component
 } from '@angular/core';
 import {
-  NavController
+  NavController,
+  PopoverController
 } from 'ionic-angular';
 import {
   Http,
   HTTP_PROVIDERS
 } from '@angular/http';
 import * as _ from 'lodash';
+import {CarLocatePage} from '../car-locate/car-locate';
 import {
-  CarLocatePage
-} from '../car-locate/car-locate';
+  AddCarPage
+} from '../add-car/add-car';
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
 })
-import {
-  addCar
-} from '../add-car/add-car';
+
 
 
 export class HomePage {
@@ -45,7 +45,7 @@ export class HomePage {
   };
 
   presentPopover() {
-    let popover = this.popoverCtrl.create(addCar);
+    let popover = this.popoverCtrl.create(AddCarPage);
     popover.present();
   }
 
