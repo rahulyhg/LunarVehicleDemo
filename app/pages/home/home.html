@@ -1,22 +1,22 @@
 <ion-header>
-    <ion-navbar primary>
-        <ion-title>Track a Vechicle</ion-title>
-        <ion-buttons end>
-            <button>
+  <ion-navbar primary>
+    <ion-title>Track a Vechicle</ion-title>
+    <ion-buttons end>
+      <button>
         <ion-icon name="add" (click)="presentPopover()"></ion-icon>
       </button>
-        </ion-buttons>
-    </ion-navbar>
+    </ion-buttons>
+  </ion-navbar>
 </ion-header>
 
 <ion-content padding class="home">
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-    </ion-refresher>
-    <ion-list>
-        <ion-item *ngFor="let car of cars" (click)="itemSelected(car)">
-            {{car.name}} - <span class="subText">{{car.model}}</span>
-            <ion-note class="power-level" [className]="car.powerClass" item-right>{{car.power_level_percent}}%</ion-note>
-        </ion-item>
-    </ion-list>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item *ngFor="let car of cars" (click)="itemSelected(car)">
+      {{car.name}} - <span class="subText">{{car.model}}</span>
+      <ion-note class="power-level" [className]="car.powerClass" item-right>{{car.power_level_percent}}%</ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>

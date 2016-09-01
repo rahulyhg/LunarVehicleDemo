@@ -10,16 +10,6 @@ import {
   CarLocatePage
 } from '../car-locate/car-locate';
 
-import {
-  platformBrowserDynamic
-} from "@angular/platform-browser-dynamic";
-import {
-  BrowserModule
-} from "@angular/platform-browser";
-import {
-  FormsModule
-} from "@angular/forms";
-
 /*
   Generated class for the AddCarPage page.
 
