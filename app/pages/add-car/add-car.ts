@@ -1,6 +1,5 @@
 import {
-  Component,
-  NgModule
+  Component
 } from '@angular/core';
 
 import {
@@ -21,7 +20,7 @@ import {
 })
 export class AddCarPage {
 
-  constructor(private navCtrl: NavController, public _form: FormBuilder) {
+  constructor(private navCtrl: NavController) {
     this.navCtrl = navCtrl;
   }
 
