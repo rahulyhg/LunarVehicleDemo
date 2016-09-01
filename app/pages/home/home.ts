@@ -16,6 +16,9 @@ import {
 @Component({
   templateUrl: 'build/pages/home/home.html'
 })
+import {
+  addCar
+} from '../add-car/add-car';
 
 
 export class HomePage {
@@ -30,15 +33,21 @@ export class HomePage {
   }
 
 
-  constructor(private navCtrl: NavController, public http: Http) {
+  constructor(private navCtrl: NavController, public http: Http, public popoverCtrl: PopoverController) {
     this.http = http;
     this.getCarList(null);
     this.navCtrl = navCtrl;
+    this.popoverCtrl = popoverCtrl;
   };
 
   private doRefresh = function(refresher) {
     this.getCarList(refresher);
   };
+
+  presentPopover() {
+    let popover = this.popoverCtrl.create(addCar);
+    popover.present();
+  }
 
   private getCarList(refresher) {
     var called = 0;
