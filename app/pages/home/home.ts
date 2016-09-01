@@ -8,6 +8,7 @@ import {
   Http,
   HTTP_PROVIDERS
 } from '@angular/http';
+import * as _ from 'lodash';
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
@@ -19,12 +20,9 @@ export class HomePage {
     console.log(item);
   }
 
+
   constructor(private navCtrl: NavController, public http: Http) {
     this.http = http;
-console.log(_.VERSION);
-
-    
-
     this.getCarList();
   }
   private getCarList() {
@@ -32,7 +30,21 @@ console.log(_.VERSION);
       this.http.get(this.url + i + "/locate.json")
         .map(res => res.json())
         .subscribe((response) => {
+          if (response.power_level_percent > 75) {
+            response.powerClass = "green";
+          } else if (response.power_level_percent <= 75 && response.power_level_percent > 50) {
+            response.powerClass = "yellow";
+          } else if (response.power_level_percent <= 50 && response.power_level_percent > 25) {
+            response.powerClass = "orange";
+          } else if (response.power_level_percent <= 25) {
+            response.powerClass = "red";
+          }
+
           this.cars.push(response);
+
+          this.cars = _.orderBy(this.cars, "name");
+
+          console.log(this.cars);
         });
     }
   }

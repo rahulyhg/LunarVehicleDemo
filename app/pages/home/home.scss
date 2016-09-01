@@ -1,2 +1,41 @@
-.home {
+.home {}
+
+span.subText {
+  color: grey;
+}
+
+.green {
+  background: #05b105;
+  color: white;
+  padding: 5px 12px;
+  width: 60px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.yellow {
+  background: #c6dc13;
+  color: white;
+  padding: 5px 12px;
+  width: 60px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.orange {
+  background: #ff9c21;
+  color: white;
+  padding: 5px 12px;
+  width: 60px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.red {
+  background: #ff6262;
+  color: white;
+  padding: 5px 12px;
+  width: 60px;
+  border-radius: 10px;
+  text-align: center;
 }
