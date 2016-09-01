@@ -48,10 +48,11 @@ export class HomePage {
   };
 
   private presentPopover = function(myEvent) {
-    let popover = this.popoverCtrl.create(AddCarPage);
-    popover.present({
-      ev: myEvent
-    });
+    // let popover = this.popoverCtrl.create(AddCarPage);
+    // popover.present({
+    //   ev: myEvent
+    // });
+    this.navCtrl.push(AddCarPage);
   }
 
   private getCarList(refresher) {

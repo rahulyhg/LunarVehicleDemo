@@ -38,7 +38,7 @@ export class AddCarPage {
         name: form.name,
         lat: parseFloat(form.lat),
         long: parseFloat(form.long),
-        model:   "",
+        model:   "Manual",
         power_level_percent:  parseInt("100")
       }
     });

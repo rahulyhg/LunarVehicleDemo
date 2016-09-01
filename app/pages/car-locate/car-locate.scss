@@ -39,9 +39,14 @@
     right: 0;
   }
 
+  .undefined {
+    display: none;
+  }
   .green {
     @include powerClass2(#05b105);
   }
+
+
 
   .yellow {
     @include powerClass2(#f7c200);
