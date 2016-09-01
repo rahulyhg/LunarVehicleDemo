@@ -9,7 +9,9 @@ import {
   HTTP_PROVIDERS
 } from '@angular/http';
 import * as _ from 'lodash';
-import {CarLocatePage} from '../car-locate/car-locate';
+import {
+  CarLocatePage
+} from '../car-locate/car-locate';
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
@@ -30,12 +32,18 @@ export class HomePage {
 
   constructor(private navCtrl: NavController, public http: Http) {
     this.http = http;
-    this.getCarList();
+    this.getCarList(null);
     this.navCtrl = navCtrl;
-  }
-  private getCarList() {
+  };
+
+  private doRefresh = function(refresher) {
+    this.getCarList(refresher);
+  };
+
+  private getCarList(refresher) {
     var called = 0;
     var classMain = this;
+    classMain.cars = [];
     var allCarsId = _.times(this.maxCars);
     _.each(allCarsId, function(i) {
       classMain.http.get(classMain.url + i + "/locate.json")
@@ -53,6 +61,9 @@ export class HomePage {
           classMain.cars.push(response);
           called++;
           if (called == classMain.maxCars) {
+            if (refresher) {
+              refresher.complete();
+            }
             classMain.cars = _.orderBy(classMain.cars, "name");
           }
         });
