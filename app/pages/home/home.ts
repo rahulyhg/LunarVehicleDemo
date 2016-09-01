@@ -18,6 +18,7 @@ import {CarLocatePage} from '../car-locate/car-locate';
 
 export class HomePage {
   private url = "http://cndlunarlocator.herokuapp.com/vehicles/";
+  // private url = "http://localhost:8100/demo.json#/";
   private cars = [];
   private maxCars = 6;
   private itemSelected(item) {
