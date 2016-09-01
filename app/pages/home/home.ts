@@ -9,22 +9,28 @@ import {
   HTTP_PROVIDERS
 } from '@angular/http';
 import * as _ from 'lodash';
+import {CarLocatePage} from '../car-locate/car-locate';
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
 })
+
+
 export class HomePage {
   private url = "http://cndlunarlocator.herokuapp.com/vehicles/";
   private cars = [];
   private maxCars = 6;
   private itemSelected(item) {
-    console.log(item);
+    this.navCtrl.push(CarLocatePage, {
+      car: item
+    });
   }
 
 
   constructor(private navCtrl: NavController, public http: Http) {
     this.http = http;
     this.getCarList();
+    this.navCtrl = navCtrl;
   }
   private getCarList() {
     var called = 0;

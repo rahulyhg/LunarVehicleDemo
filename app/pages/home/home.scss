@@ -1,41 +1,29 @@
-.home {}
+.home {
+  span.subText {
+    color: grey;
+  }
+  @mixin powerClass($color) {
+    background: $color;
+    color: white;
+    padding: 5px 12px;
+    width: 60px;
+    border-radius: 10px;
+    text-align: center;
+  }
 
-span.subText {
-  color: grey;
-}
+  .green {
+    @include powerClass(#05b105);
+  }
 
-.green {
-  background: #05b105;
-  color: white;
-  padding: 5px 12px;
-  width: 60px;
-  border-radius: 10px;
-  text-align: center;
-}
+  .yellow {
+    @include powerClass(#f7c200);
+  }
 
-.yellow {
-  background: #f7d906;
-  color: white;
-  padding: 5px 12px;
-  width: 60px;
-  border-radius: 10px;
-  text-align: center;
-}
+  .orange {
+    @include powerClass(#ff9c21);
+  }
 
-.orange {
-  background: #ff9c21;
-  color: white;
-  padding: 5px 12px;
-  width: 60px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.red {
-  background: #ff6262;
-  color: white;
-  padding: 5px 12px;
-  width: 60px;
-  border-radius: 10px;
-  text-align: center;
+  .red {
+    @include powerClass(#ff6262);
+  }
 }

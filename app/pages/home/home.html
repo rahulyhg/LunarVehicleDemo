@@ -6,7 +6,7 @@
 
 <ion-content padding class="home">
   <ion-list>
-    <ion-item *ngFor="let car of cars" (click)="itemSelected(car)">
+    <ion-item *ngFor="let car of cars" (click)="itemSelected(car)" >
       {{car.name}} - <span class="subText">{{car.model}}</span>
       <ion-note class="power-level"  [className]="car.powerClass" item-right>{{car.power_level_percent}}%</ion-note>
     </ion-item>
