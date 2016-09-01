@@ -20,14 +20,9 @@ import {
   templateUrl: 'build/pages/add-car/add-car.html',
 })
 export class AddCarPage {
-  username: AbstractControl;
-  password: AbstractControl;
-
 
   constructor(private navCtrl: NavController, public _form: FormBuilder) {
     this.navCtrl = navCtrl;
-    this.username = this.authForm.controls['username'];
-    this.password = this.authForm.controls['password'];
   }
 
   private dataSubmit = function() {
