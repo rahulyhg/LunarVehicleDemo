@@ -1,20 +1,22 @@
 
 <ion-content class="add-car">
   <h5>Add New Vehicle</h5>
-  <form >
+
     <ion-item>
         <ion-label floating>Name</ion-label>
-        <ion-input type="text" value="" ></ion-input>
+        <ion-input type="text" value="" [(ngModel)]="form.name" ></ion-input>
     </ion-item>
     <ion-item>
         <ion-label floating>Latitude</ion-label>
-        <ion-input type="number" value=""  ></ion-input>
+        <ion-input type="number" value="" [(ngModel)]="form.lat"  ></ion-input>
     </ion-item>
     <ion-item>
         <ion-label floating>Longitude</ion-label>
-        <ion-input type="number" value=""  ></ion-input>
+        <ion-input type="number" value=""  [(ngModel)]="form.long" ></ion-input>
     </ion-item>
     <br/><br/>
-    <button type="submit" class="custom-button" block>Submit</button>
-</form>
+    {{form|json}}
+    <div padding-horizontal>
+        <button primary block (click)="dataSubmit(form);">Submit</button>
+    </div>
 </ion-content>

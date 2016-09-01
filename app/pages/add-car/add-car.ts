@@ -19,21 +19,25 @@ import {
   templateUrl: 'build/pages/add-car/add-car.html',
 })
 export class AddCarPage {
-
+  private form = {
+    name: "",
+    lat: "",
+    long: ""
+  };
   constructor(private navCtrl: NavController) {
     this.navCtrl = navCtrl;
   }
 
-  private dataSubmit = function() {
-    console.log(this.newCarForm.value);
-    // this.navCtrl.push(CarLocatePage, {
-    //
-    //   car: {
-    //     name: this.name,
-    //     lat: this.lat,
-    //     long: this.long
-    //   }
-    // });
+  private dataSubmit = function(form) {
+    console.log(form);
+    console.log(this.form);
+    // var mainClass=this;
+    // console.log(this.newCarForm.value);
+    this.navCtrl.push(CarLocatePage, {
+      car: {
+        name:form.name
+      }
+    });
   }
 
 
