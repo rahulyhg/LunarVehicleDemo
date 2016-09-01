@@ -123,8 +123,8 @@ export class CarLocatePage {
 
     this.map.mapTypes.set('moon', moonMapType);
     this.map.setMapTypeId('moon');
-    var carIcon = 'build/img/carIcon.png';
-    var officeIcon = 'build/img/officeIcon.png';
+    var carIcon = 'img/carIcon.png';
+    var officeIcon = 'img/officeIcon.png';
     var car = new google.maps.Marker({
       position: carLatLong,
       map: this.map,
