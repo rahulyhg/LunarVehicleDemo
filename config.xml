@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.wohlig.cnd" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Car Next Door</name>
+<widget id="com.wohlig.lvt" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Lunar Vehicle Tracker</name>
   <description>Lunar Vehicle Tracking App</description>
   <author email="info@wohlig.com" href="http://wohlig.com/">Wohlig Technology</author>
   <content src="index.html"/>
