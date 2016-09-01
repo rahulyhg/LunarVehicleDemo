@@ -108,7 +108,7 @@ export class CarLocatePage {
           return null;
         }
         var bound = Math.pow(2, zoom);
-        return '//mw1.google.com/mw-planetary/lunar/lunarmaps_v1/clem_bw' +
+        return 'https://mw1.google.com/mw-planetary/lunar/lunarmaps_v1/clem_bw' +
           '/' + zoom + '/' + normalizedCoord.x + '/' +
           (bound - normalizedCoord.y - 1) + '.jpg';
       },
