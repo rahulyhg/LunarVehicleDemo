@@ -15,6 +15,8 @@
 
 @import "../pages/car-locate/car-locate";
 
+@import "../pages/add-car/add-car";
+
 .toolbar-title {
     padding: 0 12px;
     font-size: 2rem;
@@ -25,4 +27,7 @@
 scroll-content {
     padding: 0px;
     overflow: auto;
+}
+.popover-content {
+  margin-top: 50px;
 }

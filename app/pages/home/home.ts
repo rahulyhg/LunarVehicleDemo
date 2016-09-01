@@ -10,7 +10,9 @@ import {
   HTTP_PROVIDERS
 } from '@angular/http';
 import * as _ from 'lodash';
-import {CarLocatePage} from '../car-locate/car-locate';
+import {
+  CarLocatePage
+} from '../car-locate/car-locate';
 import {
   AddCarPage
 } from '../add-car/add-car';
@@ -38,15 +40,22 @@ export class HomePage {
     this.getCarList(null);
     this.navCtrl = navCtrl;
     this.popoverCtrl = popoverCtrl;
+
   };
 
   private doRefresh = function(refresher) {
     this.getCarList(refresher);
   };
 
-  presentPopover() {
+  private presentPopover = function(myEvent) {
+    var event2 = _.cloneDeep(myEvent);
+    // event2.clientX = 100;
+    // event2.x = 100;
+
     let popover = this.popoverCtrl.create(AddCarPage);
-    popover.present();
+    popover.present({
+      ev: myEvent
+    });
   }
 
   private getCarList(refresher) {

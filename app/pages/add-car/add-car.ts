@@ -1,5 +1,24 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {
+  Component,
+  NgModule
+} from '@angular/core';
+
+import {
+  NavController
+} from 'ionic-angular';
+import {
+  CarLocatePage
+} from '../car-locate/car-locate';
+
+import {
+  platformBrowserDynamic
+} from "@angular/platform-browser-dynamic";
+import {
+  BrowserModule
+} from "@angular/platform-browser";
+import {
+  FormsModule
+} from "@angular/forms";
 
 /*
   Generated class for the AddCarPage page.
@@ -11,9 +30,27 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'build/pages/add-car/add-car.html',
 })
 export class AddCarPage {
+  username: AbstractControl;
+  password: AbstractControl;
 
-  constructor(private navCtrl: NavController) {
 
+  constructor(private navCtrl: NavController, public _form: FormBuilder) {
+    this.navCtrl = navCtrl;
+    this.username = this.authForm.controls['username'];
+    this.password = this.authForm.controls['password'];
   }
+
+  private dataSubmit = function() {
+    console.log(this.newCarForm.value);
+    // this.navCtrl.push(CarLocatePage, {
+    //
+    //   car: {
+    //     name: this.name,
+    //     lat: this.lat,
+    //     long: this.long
+    //   }
+    // });
+  }
+
 
 }
