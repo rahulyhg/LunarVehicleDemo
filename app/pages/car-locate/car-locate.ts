@@ -75,8 +75,7 @@ export class CarLocatePage {
         }
 
     var distance  = getDistanceFromLatLonInKm(this.car.lat, this.car.long, this.cndCenterPosition.lat, this.cndCenterPosition.lng);
-    console.log(distance);
-    this.car.distance = getDistanceFromLatLonInKm(this.car.lat, this.car.long, this.cndCenterPosition.lat, this.cndCenterPosition.lng);
+    this.car.distance = distance;
   }
 
   @ViewChild('map') mapElement: ElementRef;
