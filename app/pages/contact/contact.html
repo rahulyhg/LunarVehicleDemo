@@ -1,17 +1,38 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar primary>
+        <ion-title>
+            Contact Us
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+    <ion-list>
+        <ion-list-header>Send us your query, we will get back to you soon.</ion-list-header>
+
+        <ion-item>
+            <ion-label stacked>Name</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input type="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Mobile</ion-label>
+            <ion-input type="tel"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Query</ion-label>
+            <ion-textarea></ion-textarea>
+        </ion-item>
+
+    </ion-list>
+
+    <div padding-horizontal>
+        <button primary block>Submit</button>
+    </div>
 </ion-content>
