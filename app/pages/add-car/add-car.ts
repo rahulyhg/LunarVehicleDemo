@@ -29,10 +29,7 @@ export class AddCarPage {
   }
 
   private dataSubmit = function(form) {
-    console.log(form);
-    console.log(this.form);
-    // var mainClass=this;
-    // console.log(this.newCarForm.value);
+
     this.navCtrl.push(CarLocatePage, {
       car: {
         name: form.name,
