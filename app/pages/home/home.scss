@@ -1,6 +1,7 @@
 .home {
   span.subText {
     color: grey;
+    font-size: 14px;
   }
   @mixin powerClass($color) {
     background: $color;
