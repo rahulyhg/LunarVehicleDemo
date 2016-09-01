@@ -16,6 +16,7 @@ import * as _ from 'lodash';
 export class HomePage {
   private url = "http://cndlunarlocator.herokuapp.com/vehicles/";
   private cars = [];
+  private maxCars = 6;
   private itemSelected(item) {
     console.log(item);
   }
@@ -26,8 +27,11 @@ export class HomePage {
     this.getCarList();
   }
   private getCarList() {
-    for (var i = 0; i < 6; i++) {
-      this.http.get(this.url + i + "/locate.json")
+    var called = 0;
+    var classMain = this;
+    var allCarsId = _.times(this.maxCars);
+    _.each(allCarsId, function(i) {
+      classMain.http.get(classMain.url + i + "/locate.json")
         .map(res => res.json())
         .subscribe((response) => {
           if (response.power_level_percent > 75) {
@@ -39,13 +43,12 @@ export class HomePage {
           } else if (response.power_level_percent <= 25) {
             response.powerClass = "red";
           }
-
-          this.cars.push(response);
-
-          this.cars = _.orderBy(this.cars, "name");
-
-          console.log(this.cars);
+          classMain.cars.push(response);
+          called++;
+          if (called == classMain.maxCars) {
+            classMain.cars = _.orderBy(classMain.cars, "name");
+          }
         });
-    }
+    });
   }
 }
