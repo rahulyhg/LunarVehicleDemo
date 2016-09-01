@@ -1,10 +1,32 @@
 .car-locate-page {
+  scroll-content {
+    padding: 0;
+    overflow: auto;
+  }
+
+  #map {
+    width: 100%;
+    height: calc(100% - 40px);
+  }
+
+  h6.distanceCND {
+    font-weight: 300;
+    position: fixed;
+    bottom: 55px;
+    background: #e4e4e4;
+    width: 100%;
+    left: 0;
+    padding: 10px;
+
+    span.distance {
+      font-weight: 500;
+    };
+  }
 
   .subText {
     font-size: 15px;
     font-weight: 100;
   }
-
   @mixin powerClass2($color) {
     background: $color;
     color: white;

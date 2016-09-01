@@ -1,13 +1,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{car.name}} - <span class="subText">{{car.model}}</span></ion-title>   <ion-note class="power-level"  [className]="car.powerClass" item-right>{{car.power_level_percent}}%</ion-note>
-    
+    <ion-title>{{car.name}}
+      -
+      <span class="subText">{{car.model}}</span>
+    </ion-title>
+    <ion-note class="power-level" [className]="car.powerClass" item-right>{{car.power_level_percent}}%</ion-note>
+
   </ion-navbar>
 
 </ion-header>
 
+<ion-content padding class="car-locate" overflow-scroll="false">
+  <div #map id="map"></div>
 
-<ion-content padding>
-
+  <h6 class="distanceCND">Distance from CND: <span class="distance"> {{car.distance}} km </span> </h6>
 </ion-content>
