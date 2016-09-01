@@ -1,7 +1,7 @@
 import {
   Component
 } from '@angular/core';
-
+import * as _ from 'lodash';
 import {
   NavController
 } from 'ionic-angular';
@@ -29,7 +29,15 @@ export class AddCarPage {
   }
 
   private dataSubmit = function(form) {
-
+    if (_.isNaN(parseFloat(form.lat))) {
+      form.lat = 0;
+    }
+    if (_.isNaN(parseFloat(form.long))) {
+      form.long = 0;
+    }
+    if (form.name == "") {
+      form.name = "Custom Vehicle";
+    }
     this.navCtrl.push(CarLocatePage, {
       car: {
         name: form.name,
