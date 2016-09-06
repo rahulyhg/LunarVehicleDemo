@@ -10,9 +10,9 @@ import {
 })
 
 export class AboutPage {
-  private items: any;
-  
-  constructor(private navCtrl: NavController) {    
+  private items: any;1
+
+  constructor(private navCtrl: NavController) {
   }
   slides = [
   {
@@ -31,5 +31,5 @@ export class AboutPage {
       image: "http://ionicframework.com/dist/preview-app/www/img/ica-slidebox-img-3.png",
     }
   ];
-  
+
 }
